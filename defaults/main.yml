@@ -1,0 +1,30 @@
+---
+## The version of the node exporter to download and install. A full list of versions can be found at the following URL:
+## https://github.com/oliver006/redis_exporter/releases
+redis_exporter_version: "0.11.3"
+
+## The architecture that the node exporter supports. The exporter is built for a series of architectures; see the above
+## releases link for further details
+redis_exporter_arch: "amd64"
+
+## The checksum algorithm to check the release against. See the following URL for a list of options:
+## http://docs.ansible.com/ansible/stat_module.html
+redis_exporter_checksum_algorithm: "sha512"
+
+## There are two checksums that matter: The archive, and the binary. The binary is the executable node exporter,
+## the archive the thing it's downloaded with.
+redis_exporter_checksum_binary: "8aa6be677870c8b7dc3c5e1ff5824838c005b5413e2ea7781bd8763ca14c6aba04a0cad4698fc613ef013797821c39405e1566855f0c63495ebb4a2f733f75a7"
+
+## See above
+redis_exporter_checksum_archive: "cf321fc13789a0bd355eceee730a5d568c7f7f946cb594104e8fcc1edbe26974c5c04baa57a73336fc008e00d87c16ca07bde2a05f09ba1aaee5d120dee22673."
+
+## A comma separated set of redis hosts to query
+redis_exporter_address: "redis://localhost:6379"
+
+## Aliases for the redis node addresses.
+## (Optional)
+# redis_exporter_alias: ""
+
+## The password to connect to redis
+## (Optional)
+# redis_exporter_password: ""

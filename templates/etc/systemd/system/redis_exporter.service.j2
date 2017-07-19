@@ -1,0 +1,15 @@
+[Unit]
+Description=The prometheus redis exporter
+Documentation=https://github.com/sitewards/ansible-role-redis-exporter
+
+[Service]
+EnvironmentFile=/etc/default/redis_exporter
+
+# Start the service, bound to localhost. It will be exposed by another service, such as NGINX or stunnel.
+ExecStart=/usr/local/bin/redis_exporter \
+    -web.listen-address="127.0.0.1:9121"
+
+[Install]
+
+# Boot it after the network is up and running
+WantedBy=network-online.target

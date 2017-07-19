@@ -1,0 +1,15 @@
+# These are the defaults for the redis_exporter. Possible variables are:
+#
+# - REDIS_ADDR
+# - REDIS_ALIAS
+# - REDIS_PASSWORD
+#
+# See https://github.com/oliver006/redis_exporter for further details.
+
+REDIS_ADDR="{{ redis_exporter_address }}"
+{% if redis_exporter_alias is defined and redis_exporter_alias %}
+REDIS_ALIAS="{{ redis_exporter_alias }}"
+{% endif %}
+{% if redis_exporter_password is defined and redis_exporter_password %}
+REDIS_PASSWORD="{{ redis_exporter_password }}"
+{% endif %}

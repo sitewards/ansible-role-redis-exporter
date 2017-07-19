@@ -1,0 +1,16 @@
+---
+- name: "Create the environment file"
+  template:
+    src: "etc/default/node_exporter"
+    dest: "/etc/default/redis_exporter"
+    owner: "root"
+    mode: "u=r,g=r,o=r"
+  notify: "restart redis_exporter"
+
+- name: "Create the systemd service"
+  template:
+    src: "etc/systemd/system/redis_exporter.service.j2"
+    dest: "/etc/systemd/system/redis_exporter.service"
+    owner: "root"
+    mode: "u=rwx,g=r,o=r"
+  notify: "restart redis_exporter"
